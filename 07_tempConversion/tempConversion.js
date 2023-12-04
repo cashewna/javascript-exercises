@@ -15,7 +15,21 @@ const convertToCelsius = function(tempInFahrenheit) {
   return tempInCelsius;
 };
 
-const convertToFahrenheit = function() {
+/**
+ * Converts a given temperature from Celsius to Fahrenheit
+ * @param {number} tempInCelsius 
+ * returns {number} tempInFahrenheit
+ */
+const convertToFahrenheit = function(tempInCelsius) {
+  if (typeof tempInCelsius !== 'number') {
+    return "ERROR";
+  }
+  
+  let tempInFahrenheit = (tempInCelsius * 9/5) + 32;
+  if (tempInFahrenheit % 1 !== 0) {
+    tempInFahrenheit = Math.round(tempInFahrenheit * 10) / 10;
+  }
+  return tempInFahrenheit;
 };
 
 // Do not edit below this line
